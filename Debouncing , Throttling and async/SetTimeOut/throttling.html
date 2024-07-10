@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>throttling</title>
+</head>
+
+<body>
+    <!-- <input class="throttle" type="text" placeholder="throttle"> -->
+    <input class="throttling" type="text" placeholder="Throttling">
+    <!-- <input type="text"> -->
+    <Script>
+        let count = 1;
+        let input = document.querySelector(".throttling");
+
+        let throttleFxn = throttle(cb, 1000);
+
+        input.addEventListener("keydown", throttleFxn);
+        function cb() {
+            console.log("Network call " + count);
+            count++;
+        }
+
+        function throttle(cb, delay) {
+            let flag = true;
+            return function () {
+                if (flag) {
+                    cb();
+                    flag = false;
+                    setTimeout(function () {
+                        flag = true;
+                    }, delay);
+                }
+
+
+
+            };
+
+        }
+    </Script>
+</body>
+
+</html>
