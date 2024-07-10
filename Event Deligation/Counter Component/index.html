@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Counter</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0px;
+            padding: 0px;
+        }
+
+        .container {
+            height: 100vh;
+            width: 100vw;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .container h1 {
+            margin: 30px;
+        }
+
+        .counter {
+            width: 30%;
+            display: flex;
+            justify-content: center;
+        }
+
+        #increment-btn,
+        #decrement-btn,
+        #reset {
+            height: 50px;
+            width: 120px;
+            padding: 0 40px;
+            border-radius: 10px;
+            font-size: 40px;
+            background-color: #2e8d46;
+            border: 2px solid #2e8d46;
+            color: white;
+            margin: 20px;
+        }
+
+        #reset {
+            font-size: 20px;
+        }
+
+        #counter-value {
+            height: 50px;
+            min-width: 120px;
+            border-radius: 10px;
+            background-color: rgba(255, 0, 0, 0.187);
+            margin-top: 20px;
+            font-size: 30px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+    </style>
+</head>
+
+<body>
+
+    <body>
+        <div class="container">
+            <h1>Counter App</h1>
+            <h2>0</h2>
+            <label class="counter-value"> Increment/Decrement by :<input type="number"></label>
+            <div class="counter">
+
+                <button id="increment-btn">+</button>
+                <button id="decrement-btn">-</button>
+                <button id="reset">Reset</button>
+            </div>
+
+        </div>
+
+
+        <script>
+            let btnContainer = document.querySelector(".counter");
+            let count = 0;
+            let counter = document.querySelector("h2");
+            let input = document.querySelector('input');
+            let incDec = 1;
+            input.addEventListener('change', function (e) {
+                incDec = Number(e.target.value);
+            });
+
+            btnContainer.addEventListener("click", function (e) {
+                if (e.target.id === "increment-btn") {
+                    count += incDec;
+                    counter.innerText = count;
+                } else if (e.target.id === "decrement-btn") {
+                    if (count == 0) {
+                        return;
+                    }
+                    count -= incDec;
+                    counter.innerText = count;
+                } else if (e.target.id === "reset") {
+                    count = 0;
+                    counter.innerText = count;
+                }
+            })
+
+
+
+        </script>
+    </body>
+
+</html>

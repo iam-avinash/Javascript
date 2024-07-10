@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SetTimeOut</title>
+</head>
+
+<body>
+
+    <button>Stop Time</button>
+
+
+    <script>
+
+        // function greet() {
+        //     console.log("Hello World after 3 Second");
+        // }
+
+        // setTimeout(greet, 3000);
+
+        // setTimeout(() => {
+        //     console.log("Delayed for 1 Second.");
+        // }, "1000");
+
+        // function hello() {
+        //     setTimeout(function () {
+        //         console.log("more delay");
+        //     }, 2000);
+        // }
+
+        // setTimeout(hello, 3000);
+
+        let btn = document.querySelector("button");
+
+
+
+        let timer = setTimeout(function () {
+            console.log("I am SetTimeOut Function");
+        }, 5000);
+
+        console.log(timer);
+
+        btn.addEventListener("click", function () {
+            clearTimeout(timer);
+        });
+
+        // program to display time every 3 seconds
+        function showTime() {
+            let dateTime = new Date();
+            let time = dateTime.toLocaleTimeString();
+
+            console.log(time);
+
+            setTimeout(showTime, 1500);
+        }
+
+
+        showTime();
+
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Debouncing</title>
+</head>
+
+<body>
+    <input class="debounce" type="text" placeholder="Debounce">
+    <input type="text" placeholder="Throttling">
+    <!-- <input type="text"> -->
+    <Script>
+        let count = 1;
+        let input = document.querySelector(".debounce");
+
+        let debounceFxn = debounce(cb, 1000);
+
+        input.addEventListener("keydown", debounceFxn);
+        function cb() {
+            console.log("Network call " + count);
+            count++;
+        }
+
+        function debounce(cb, delay) {
+            let timer;
+            return function () {
+                clearTimeout(timer);
+                timer = setTimeout(cb, delay);
+            };
+
+        }
+    </Script>
+</body>
+
+</html>

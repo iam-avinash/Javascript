@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Delegation</title>
+    <style>
+        .parent {
+            background-color: blue;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .child {
+            height: 100px;
+            width: 100px;
+            background-color: yellowgreen;
+            margin: 5rem;
+            padding: 5rem;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="parent">
+        <div class="child"></div>
+        <div class="child"></div>
+        <div class="child"></div>
+    </div>
+
+    <script>
+        let parent = document.querySelector('.parent');
+        // let childCont = document.querySelectorAll(".child");
+        // for (let i = 0; i < childCont.length; i++) {
+        //     childCont[i].addEventListener("click", function () {
+        //         console.log("Child is Clicked");
+        //     });
+
+        // }
+
+        parent.addEventListener('click', function (event) {
+            // console.log(event);
+            if (event.target.className === "parent") {
+                console.log("parent is clicked");
+            } else {
+                console.log("Child is clicked");
+            }
+        })
+    </script>
+</body>
+
+</html>

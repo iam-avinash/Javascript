@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Star Component</title>
+
+    <style>
+        .container {
+            display: flex;
+            align-items: center;
+
+            font-size: 2rem;
+        }
+
+        body {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+        }
+
+        .active {
+            color: gold;
+        }
+
+        .star:hover {
+            cursor: pointer;
+            color: gold;
+
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Star Component</h1>
+    <div class="container">
+
+        <div class="star" data-pos="1">&#9733;</div>
+        <div class="star" data-pos="2">&#9733;</div>
+        <div class="star" data-pos="3">&#9733;</div>
+        <div class="star" data-pos="4">&#9733;</div>
+        <div class="star" data-pos="5">&#9733;</div>
+
+    </div>
+    <h2>Rating:</h2>
+
+    <script>
+        let container = document.querySelector('.container');
+        let allStar = document.querySelectorAll('.star');
+        let rating = document.querySelector('h2');
+        container.addEventListener("click", function (e) {
+
+
+
+            if (e.target.classList.contains("star")) {
+                for (let i = 0; i < allStar.length; i++) {
+                    allStar[i].classList.remove("active");
+
+                }
+
+
+                let currentStar = e.target.dataset.pos;
+                for (let i = 0; i < currentStar; i++) {
+                    allStar[i].classList.add("active");
+
+                }
+                rating.innerText = "Rating:" + currentStar;
+            }
+        });
+        container.addEventListener('mouseover', function (e) {
+            if (e.target.classList.contains("star")) {
+                let currentStar = e.target.dataset.pos;
+                for (let i = 0; i < currentStar; i++) {
+                    allStar[i].classList.add("active");
+
+                }
+            }
+        });
+
+        container.addEventListener('mouseout', function (e) {
+            if (e.target.classList.contains("star")) {
+                let currentStar = e.target.dataset.pos;
+                for (let i = 0; i < currentStar; i++) {
+                    allStar[i].classList.remove("active");
+
+                }
+            }
+        })
+
+    </script>
+
+</body>
+
+</html>

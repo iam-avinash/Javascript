@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Even Propagation</title>
+    <style>
+        .grandparent {
+
+            margin: auto;
+            height: 600px;
+            width: 600px;
+            background-color: rebeccapurple;
+            border: 2px solid black;
+            display: flex;
+
+        }
+
+        .parent {
+            margin: auto;
+            height: 400px;
+            width: 400px;
+            background-color: thistle;
+            border: 2px solid black;
+            display: flex;
+        }
+
+        .child {
+            margin: auto;
+            height: 200px;
+            width: 200px;
+            background-color: bisque;
+            border: 2px solid black;
+            display: flex;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="grandparent">
+        <div class="parent">
+            <div class="child"></div>
+        </div>
+    </div>
+
+    <script>
+        let grandparent = document.querySelector(".grandparent");
+        let parent = document.querySelector(".parent");
+        let child = document.querySelector(".child");
+
+
+        grandparent.addEventListener("click", function () {
+
+            console.log("grandparent is clicked");
+
+
+        }, true);
+
+        parent.addEventListener("click", function (e) {
+
+            console.log("Parent is clicked");
+            e.stopPropagation();
+        }, true);
+        child.addEventListener("click", function (e) {
+
+            console.log("child is clicked");
+            e.stopPropagation();
+
+
+        }, true);
+    </script>
+</body>
+
+</html>
