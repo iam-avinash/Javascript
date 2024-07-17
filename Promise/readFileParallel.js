@@ -1,7 +1,7 @@
 const { isUtf8 } = require("buffer");
 const { error } = require("console");
 let fs = require("fs");
-
+//Promise Chaining
 let f1Promise = fs.promises.readFile("f1.txt", "utf-8");
 
 f1Promise
