@@ -37,7 +37,7 @@ JavaScript primarily operates with two types of data:
 These are immutable values directly stored in memory.
 
 Number: Represents numeric values, including integers and floating-point numbers.
-```JavaScript
+JavaScript
 let age = 30;
 let price = 9.99;
 
