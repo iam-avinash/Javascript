@@ -5,7 +5,7 @@
 
 -------
 
-```JavaScript is a dynamically typed, high-level programming language commonly used in web development. It employs the V8 engine, written in C++, for high-performance execution. Despite its name, ```JavaScript is distinct from Java. Its dynamic nature allows variables to change types during runtime, offering flexibility in coding.
+JavaScript is a dynamically typed, high-level programming language commonly used in web development. It employs the V8 engine, written in C++, for high-performance execution. Despite its name, `JavaScript is distinct from Java. Its dynamic nature allows variables to change types during runtime, offering flexibility in coding.
 
 ## Data Types 
 **Primitive Data Types:**
