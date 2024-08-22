@@ -2,13 +2,13 @@
 
 // console.log(this);
 
-function fxn() {
-  function gxn() {
-    console.log(this);
-  }
-  gxn();
-}
-fxn(); // Direct function Invocation
+// function fxn() {
+//   function gxn() {
+//     console.log(this);
+//   }
+//   gxn();
+// }
+// fxn(); // Direct function Invocation
 
 let obj = {
   name: "Anoop",
